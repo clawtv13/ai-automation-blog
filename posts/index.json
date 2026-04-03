@@ -1,0 +1,146 @@
+{
+  "posts": [
+    {
+      "title": "Why Sycophantic Ai Is Dangerous For Solo Builders",
+      "excerpt": "Articles about why sycophantic ai is dangerous for solo builders.",
+      "category": "Solo Founder Strategies",
+      "subcategory": "Productivity",
+      "date": "2026-04-03",
+      "url": "/solo-founder-strategies/productivity/why-sycophantic-ai-is-dangerous-for-solo-builders/",
+      "tags": []
+    },
+    {
+      "title": "The First 40 Months Of The Ai Era",
+      "excerpt": "Articles about the first 40 months of the ai era.",
+      "category": "Ai Tools",
+      "subcategory": "The First 40 Months Of The Ai Era",
+      "date": "2026-04-03",
+      "url": "/ai-tools/the-first-40-months-of-the-ai-era/",
+      "tags": []
+    },
+    {
+      "title": "Show Hn Apfel The Free Ai Already On Your Mac",
+      "excerpt": "Articles about show hn apfel the free ai already on your mac.",
+      "category": "Ai Tools",
+      "subcategory": "No Code Ai",
+      "date": "2026-04-03",
+      "url": "/ai-tools/no-code-ai/show-hn-apfel-the-free-ai-already-on-your-mac/",
+      "tags": []
+    },
+    {
+      "title": "Qwen36Plus Towards Real World Agents",
+      "excerpt": "Articles about qwen36plus towards real world agents.",
+      "category": "Ai Tools",
+      "subcategory": "Llms",
+      "date": "2026-04-03",
+      "url": "/ai-tools/llms/qwen36plus-towards-real-world-agents/",
+      "tags": []
+    },
+    {
+      "title": "Police Used Ai Facial Recognition To Wrongly Arrest Tn Woman For Crimes In Nd",
+      "excerpt": "Articles about police used ai facial recognition to wrongly arrest tn woman for crimes in nd.",
+      "category": "Ai Tools",
+      "subcategory": "Police Used Ai Facial Recognition To Wrongly Arrest Tn Woman For Crimes In Nd",
+      "date": "2026-04-03",
+      "url": "/ai-tools/police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd/",
+      "tags": []
+    },
+    {
+      "title": "Openai Closes Funding Round At An 852B Valuation",
+      "excerpt": "Articles about openai closes funding round at an 852b valuation.",
+      "category": "Ai Tools",
+      "subcategory": "Llms",
+      "date": "2026-04-03",
+      "url": "/ai-tools/llms/openai-closes-funding-round-at-an-852b-valuation/",
+      "tags": []
+    },
+    {
+      "title": "Learn Claude Code by doing, not reading",
+      "excerpt": "HN Score: 109 points, 55 comments...",
+      "category": "Tutorials",
+      "subcategory": "Learn Claude Code By Doing Not Reading",
+      "date": "2026-04-03",
+      "url": "/tutorials/learn-claude-code-by-doing-not-reading/",
+      "tags": [
+        "AI automation",
+        "Learn",
+        "Claude",
+        "Code",
+        "by"
+      ]
+    },
+    {
+      "title": "How Solo Founders Are Building Million-Dollar Businesses With AI Tools in 2026",
+      "excerpt": "Solo-founded startups surged from 23.7% (2019) to 36.3% (2025). Anthropic CEO predicted 70-80% odds of first billion-dollar one-person company by 2026. Case study: Maor Shlomo built Base44 alone and s",
+      "category": "Case Studies",
+      "subcategory": "Success Stories",
+      "date": "2026-04-03",
+      "url": "/case-studies/success-stories/how-solo-founders-are-building-milliondollar-businesses-with-ai-tools-in-2026/",
+      "tags": [
+        "AI automation",
+        "How",
+        "Solo",
+        "Founders",
+        "Are"
+      ]
+    },
+    {
+      "title": "Go Hard On Agents Not On Your Filesystem",
+      "excerpt": "Articles about go hard on agents not on your filesystem.",
+      "category": "Solo Founder Strategies",
+      "subcategory": "Productivity",
+      "date": "2026-04-03",
+      "url": "/solo-founder-strategies/productivity/go-hard-on-agents-not-on-your-filesystem/",
+      "tags": []
+    },
+    {
+      "title": "Claude Codes Source Code Has Been Leaked Via A Map File In Their Npm Registry",
+      "excerpt": "Articles about claude codes source code has been leaked via a map file in their npm registry.",
+      "category": "Ai Tools",
+      "subcategory": "Llms",
+      "date": "2026-04-03",
+      "url": "/ai-tools/llms/claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry/",
+      "tags": []
+    },
+    {
+      "title": "Chatgpt Wont Let You Type Until Cloudflare Reads Your React State",
+      "excerpt": "Articles about chatgpt wont let you type until cloudflare reads your react state.",
+      "category": "Ai Tools",
+      "subcategory": "Llms",
+      "date": "2026-04-03",
+      "url": "/ai-tools/llms/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state/",
+      "tags": []
+    },
+    {
+      "title": "Cern Uses Ultracompact Ai Models On Fpgas For Realtime Lhc Data Filtering",
+      "excerpt": "Articles about cern uses ultracompact ai models on fpgas for realtime lhc data filtering.",
+      "category": "Ai Tools",
+      "subcategory": "Cern Uses Ultracompact Ai Models On Fpgas For Realtime Lhc Data Filtering",
+      "date": "2026-04-03",
+      "url": "/ai-tools/cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering/",
+      "tags": []
+    },
+    {
+      "title": "Ai Overly Affirms Users Asking For Personal Advice",
+      "excerpt": "Articles about ai overly affirms users asking for personal advice.",
+      "category": "Ai Tools",
+      "subcategory": "Llms",
+      "date": "2026-04-03",
+      "url": "/ai-tools/llms/ai-overly-affirms-users-asking-for-personal-advice/",
+      "tags": []
+    },
+    {
+      "title": ".claude Folder Anatomy: Control Center for AI Coding",
+      "excerpt": "Most Claude Code users treat the .claude folder like a black box. They know it exists. They've seen it appear in their project root. But they've never opened it, let alone understood what every file d",
+      "category": "Tutorials",
+      "subcategory": "Claude Folder Anatomy Control Center For Ai Coding",
+      "date": "2026-04-03",
+      "url": "/tutorials/claude-folder-anatomy-control-center-for-ai-coding/",
+      "tags": [
+        "AI automation",
+        "productivity",
+        ".claude"
+      ]
+    }
+  ]
+}
