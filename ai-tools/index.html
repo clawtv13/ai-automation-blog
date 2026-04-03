@@ -1,113 +1,397 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI Tools &amp; Platforms - Work Less, Build</title>
-<meta content="In-depth reviews and comparisons of AI tools that help solo founders build faster and smarter." name="description"/>
-<link href="https://workless.build/ai-tools/" rel="canonical"/>
-<!-- Breadcrumb Schema -->
-<script type="application/ld+json">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AI Tools & Platforms - Work Less, Build</title>
+    <meta content="In-depth reviews and comparisons of AI tools that help solo founders build faster and smarter." name="description"/>
+    <link href="https://workless.build/ai-tools/" rel="canonical"/>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI Tools & Platforms">
+    <meta property="og:description" content="In-depth reviews and comparisons of AI tools that help solo founders build faster and smarter.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://workless.build/ai-tools/">
+    
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://workless.build"
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://workless.build"
         },
         {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "AI Tools & Platforms",
-          "item": "https://workless.build/ai-tools/"
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI Tools & Platforms",
+            "item": "https://workless.build/ai-tools/"
         }
-      ]
-    }
+    ]
+}
     </script>
-<style>
-.main-nav {
-    background: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
-}
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav-logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #111;
-    text-decoration: none;
-}
-.nav-menu {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-.nav-menu a {
-    color: #666;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: #0066cc;
-}
-</style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --dark: #0A0A0B;
+            --lime: #B9FF66;
+            --lime-dark: #9FE054;
+            --white: #FFFFFF;
+            --gray-900: #1A1A1C;
+            --gray-800: #2A2A2C;
+            --gray-700: #3A3A3C;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--gray-900);
+            border-bottom: 1px solid var(--gray-800);
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--lime);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-menu a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--lime);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            font-size: 0.9rem;
+            color: var(--gray-400);
+        }
+        
+        .breadcrumb a {
+            color: var(--lime);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--lime);
+        }
+        
+        .category-description {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+            margin-bottom: 3rem;
+            max-width: 800px;
+        }
+        
+        /* Subcategories Grid */
+        .subcategories {
+            margin-bottom: 4rem;
+        }
+        
+        .subcategories h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .subcategories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .subcategory-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .subcategory-card:hover {
+            border-color: var(--lime);
+            transform: translateY(-2px);
+        }
+        
+        .subcategory-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--lime);
+            margin-bottom: 0.5rem;
+        }
+        
+        .subcategory-card p {
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+        
+        .subcategory-card .post-count {
+            color: var(--gray-400);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        
+        /* Posts Grid */
+        .posts-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .posts-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .post-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            padding: 2rem;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+        }
+        
+        .post-card:hover {
+            border-color: var(--lime);
+            transform: translateX(4px);
+        }
+        
+        .post-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+        
+        .post-card .post-excerpt {
+            color: var(--gray-400);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .post-card .post-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            border-top: 1px solid var(--gray-800);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            color: var(--gray-400);
+        }
+        
+        .footer-content a {
+            color: var(--lime);
+            text-decoration: none;
+        }
+        
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body><nav class="main-nav">
-<div class="nav-container">
-<a class="nav-logo" href="/">Work Less, Build</a>
-<ul class="nav-menu">
-<li><a href="/">Home</a></li>
-<li><a href="/ai-tools/">AI Tools</a></li>
-<li><a href="/solo-founder-strategies/">Solo Founder</a></li>
-<li><a href="/case-studies/">Case Studies</a></li>
-<li><a href="/tutorials/">Tutorials</a></li>
-</ul>
-</div>
-</nav>
-<nav aria-label="Breadcrumb" class="breadcrumbs">
-<ol>
-<li><a href="https://workless.build">Home</a> › </li>
-<li>AI Tools &amp; Platforms</li>
-</ol>
-</nav>
-<main>
-<h1>AI Tools &amp; Platforms</h1>
-<p class="lead">In-depth reviews and comparisons of AI tools that help <a href="/solo-founder-strategies/">solo founder</a>s build faster and smarter.</p>
-<section class="featured-posts">
-<h2>Articles in AI Tools &amp; Platforms</h2>
-<ul>
-<li><a href="https://workless.build/ai-tools/llms/2026-03-29-ai-overly-affirms-users-asking-for-personal-advice/">AI Overly Affirms Users Asking for Personal Advice</a></li>
-<li><a href="https://workless.build/ai-tools/llms/2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry/">Claude Code's Source Code Has Been Leaked</a></li>
-<li><a href="https://workless.build/ai-tools/llms/2026-04-03-qwen36plus-towards-real-world-agents/">Qwen 3.6+: Towards Real-World Agents</a></li>
-<li><a href="https://workless.build/ai-tools/no-code-ai/2026-04-03-show-hn-apfel-the-free-ai-already-on-your-mac/">Show HN: Apfel - The Free AI Already on Your Mac</a></li>
-<li><a href="https://workless.build/ai-tools/llms/2026-03-30-chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state/">ChatGPT Won't Let You Type Until Cloudflare Reads Your React State</a></li>
-<li><a href="https://workless.build/ai-tools/llms/2026-04-01-openai-closes-funding-round-at-an-852b-valuation/">OpenAI Closes Funding Round at $852B Valuation</a></li>
-<li><a href="https://workless.build/ai-tools/2026-03-29-the-first-40-months-of-the-ai-era/">The First 40 Months of the AI Era</a></li>
-<li><a href="https://workless.build/ai-tools/2026-03-29-cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering/">CERN Uses Ultra-Compact AI Models on FPGAs</a></li>
-<li><a href="https://workless.build/ai-tools/2026-04-01-police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd/">Police Used AI Facial Recognition to Wrongly Arrest Woman</a></li>
-</ul>
-</section>
-<section class="subcategories"><h2>Subcategories</h2><ul> <li><a href="https://workless.build/ai-tools/llms/">Large Language Models</a></li>
-<li><a href="https://workless.build/ai-tools/no-code-ai/">No-Code AI Tools</a></li>
-<li><a href="https://workless.build/ai-tools/image-generation/">AI Image Generation</a></li>
-<li><a href="https://workless.build/ai-tools/automation-platforms/">Automation Platforms</a></li>
-</ul></section>
-</main>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Work Less, Build</a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/archive.html">Archive</a></li>
+                <li><a href="/about-v2.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="breadcrumb">
+        <a href="/">Home</a> → <span>AI Tools & Platforms</span>
+    </div>
+    
+    <main>
+        <h1>AI Tools & Platforms</h1>
+        <p class="category-description">In-depth reviews and comparisons of AI tools that help solo founders build faster and smarter.</p>
+        
+        
+        <section class="subcategories">
+            <h2>Subcategories</h2>
+            <div class="subcategories-grid">
+                
+                <a href="/ai-tools/automation-platforms/" class="subcategory-card">
+                    <h3>Automation Platforms</h3>
+                    <p>Zapier, Make, n8n and other tools to automate your workflows.</p>
+                    <div class="post-count">0 posts</div>
+                </a>
+            
+                <a href="/ai-tools/cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering/" class="subcategory-card">
+                    <h3>Cern Uses Ultracompact Ai Models On Fpgas For Realtime Lhc Data Filtering</h3>
+                    <p>Articles about cern uses ultracompact ai models on fpgas for realtime lhc data filtering.</p>
+                    <div class="post-count">0 posts</div>
+                </a>
+            
+                <a href="/ai-tools/image-generation/" class="subcategory-card">
+                    <h3>AI Image Generation</h3>
+                    <p>Midjourney, DALL-E, Stable Diffusion and other AI image tools.</p>
+                    <div class="post-count">0 posts</div>
+                </a>
+            
+                <a href="/ai-tools/llms/" class="subcategory-card">
+                    <h3>Large Language Models (LLMs)</h3>
+                    <p>Latest developments in ChatGPT, Claude, GPT-4, and other language models transforming how we work.</p>
+                    <div class="post-count">5 posts</div>
+                </a>
+            
+                <a href="/ai-tools/no-code-ai/" class="subcategory-card">
+                    <h3>No-Code AI Tools</h3>
+                    <p>AI tools you can use without coding - perfect for non-technical founders.</p>
+                    <div class="post-count">1 posts</div>
+                </a>
+            
+                <a href="/ai-tools/police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd/" class="subcategory-card">
+                    <h3>Police Used Ai Facial Recognition To Wrongly Arrest Tn Woman For Crimes In Nd</h3>
+                    <p>Articles about police used ai facial recognition to wrongly arrest tn woman for crimes in nd.</p>
+                    <div class="post-count">0 posts</div>
+                </a>
+            
+                <a href="/ai-tools/the-first-40-months-of-the-ai-era/" class="subcategory-card">
+                    <h3>The First 40 Months Of The Ai Era</h3>
+                    <p>Articles about the first 40 months of the ai era.</p>
+                    <div class="post-count">0 posts</div>
+                </a>
+            
+            </div>
+        </section>
+        
+        
+        <section class="posts-section">
+            <h2>Recent Posts</h2>
+            <div class="posts-grid">
+                
+            <a href="/ai-tools/automation-platforms/" class="post-card">
+                <h3>AI Automation Platforms - Work Less, Build</h3>
+                <p class="post-excerpt">Zapier, Make, n8n, and AI workflow automation tools to scale your solo business.</p>
+            </a>
+        
+            <a href="/ai-tools/image-generation/" class="post-card">
+                <h3>AI Image Generation - Work Less, Build</h3>
+                <p class="post-excerpt">DALL-E, Midjourney, Stable Diffusion - AI art tools for content creators and marketers.</p>
+            </a>
+        
+            <a href="/ai-tools/cern-uses-ultracompact-ai-models-on-fpgas-for-realtime-lhc-data-filtering/" class="post-card">
+                <h3>CERN uses ultra-compact AI models on FPGAs for real-time LHC data filtering</h3>
+                <p class="post-excerpt"></p>
+            </a>
+        
+            <a href="/ai-tools/llms/" class="post-card">
+                <h3>Large Language Models (LLMs) - Work Less, Build</h3>
+                <p class="post-excerpt">Deep dives into ChatGPT, Claude, GPT-4, and other language models transforming how solo founders work.</p>
+            </a>
+        
+            <a href="/ai-tools/no-code-ai/" class="post-card">
+                <h3>No-Code AI Tools - Work Less, Build</h3>
+                <p class="post-excerpt">Build AI-powered apps without coding. Reviews of no-code AI platforms for solo builders.</p>
+            </a>
+        
+            <a href="/ai-tools/police-used-ai-facial-recognition-to-wrongly-arrest-tn-woman-for-crimes-in-nd/" class="post-card">
+                <h3>Police used AI facial recognition to wrongly arrest TN woman for crimes in ND</h3>
+                <p class="post-excerpt"></p>
+            </a>
+        
+            <a href="/ai-tools/the-first-40-months-of-the-ai-era/" class="post-card">
+                <h3>The first 40 months of the AI era</h3>
+                <p class="post-excerpt"></p>
+            </a>
+        
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Work Less, Build. Built with automation.</p>
+            <p><a href="/">Home</a> · <a href="/archive.html">Archive</a> · <a href="/about-v2.html">About</a></p>
+        </div>
+    </footer>
 </body>
 </html>
