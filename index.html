@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NK82TJD61G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NK82TJD61G');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="5yO-hiYkM-bdPos-XyyBHOViJmVNog7BIGDo6SjlStw">
+    <meta name="description" content="Build systems that run themselves. Anti-hustle automation for solopreneurs who value their time.">
+    <meta name="keywords" content="AI automation, work less, solopreneur tools, efficiency, anti-hustle, build automation">
+    <title>Work Less, Build — Automation for the Anti-Hustle Generation</title>
+    <link rel="canonical" href="https://workless.build/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Work Less, Build">
+    <meta property="og:description" content="Build systems that run themselves">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://workless.build/">
+    <meta property="og:image" content="https://workless.build/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Work Less, Build">
+    <meta name="twitter:description" content="Build systems that run themselves">
+    <meta name="twitter:image" content="https://workless.build/og-image.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Colors */
+            --dark: #0A0A0B;
+            --lime: #B9FF66;
+            --lime-dark: #9FE054;
+            --white: #FFFFFF;
+            --gray-900: #1A1A1C;
+            --gray-800: #2A2A2C;
+            --gray-700: #3A3A3C;
+            --gray-400: #9CA3AF;
+            --gray-300: #D1D5DB;
+            --success: #10B981;
+            
+            /* Typography */
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            
+            /* Spacing */
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            
+            /* Effects */
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 30px rgba(185, 255, 102, 0.3);
+            --transition: 200ms ease;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Selection */
+        ::selection {
+            background: var(--lime);
+            color: var(--dark);
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            color: var(--white);
+        }
+        
+        .logo-accent {
+            color: var(--lime);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--lime);
+            transition: width var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--lime);
+            color: var(--dark) !important;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        
+        .nav-cta::after {
+            display: none;
+        }
+        
+        .nav-cta:hover {
+            background: var(--lime-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 8rem 2rem 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(185, 255, 102, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            padding: 0.65rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--lime);
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+        
+        .hero-badge:hover {
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .hero-badge .pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--lime);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+        
+        .hero h1 .highlight {
+            color: var(--lime);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero h1 .strike {
+            text-decoration: line-through;
+            text-decoration-color: var(--lime);
+            text-decoration-thickness: 4px;
+            opacity: 0.6;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gray-300);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            max-width: 700px;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--lime);
+            color: var(--dark);
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            border: none;
+            transition: var(--transition);
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+        
+        .btn-primary:hover {
+            background: var(--lime-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: transparent;
+            color: var(--white);
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            border: 2px solid var(--gray-800);
+            transition: var(--transition);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--lime);
+            color: var(--lime);
+            transform: translateY(-3px);
+        }
+        
+        /* Stats Bar */
+        .stats-bar {
+            max-width: 1280px;
+            margin: -3rem auto 0;
+            padding: 0 2rem 4rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stats-container {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--lime);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        /* Articles Section */
+        .articles-section {
+            padding: 5rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            margin-bottom: 3rem;
+        }
+        
+        .section-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--lime);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-400);
+            max-width: 600px;
+        }
+        
+        /* Posts Grid */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2rem;
+        }
+        
+        .post-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .post-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--lime);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+        
+        .post-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .post-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .post-meta-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+        
+        .post-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--lime);
+            background: rgba(185, 255, 102, 0.1);
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+        }
+        
+        .post-read-time {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+        
+        .post-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            color: var(--white);
+        }
+        
+        .post-card h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        
+        .post-card:hover h3 a {
+            color: var(--lime);
+        }
+        
+        .post-excerpt {
+            color: var(--gray-400);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .post-meta-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--gray-800);
+        }
+        
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .author-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lime), var(--success));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: var(--dark);
+        }
+        
+        .author-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-300);
+        }
+        
+        .post-date {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 5rem 2rem 2rem;
+            border-top: 1px solid var(--gray-800);
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: var(--lime);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.125rem;
+        }
+        
+        .footer-social a:hover {
+            background: var(--lime);
+            color: var(--dark);
+            border-color: var(--lime);
+            transform: translateY(-3px);
+        }
+        
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.875rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+            
+            .hero {
+                padding: 5rem 1.5rem 4rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 1.125rem 2rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+            }
+            
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.25rem;
+            }
+            
+            
+            
+            
+            
+            
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .post-card {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .post-card:nth-child(1) { animation-delay: 0.05s; }
+        .post-card:nth-child(2) { animation-delay: 0.1s; }
+        .post-card:nth-child(3) { animation-delay: 0.15s; }
+        .post-card:nth-child(4) { animation-delay: 0.2s; }
+        .post-card:nth-child(5) { animation-delay: 0.25s; }
+        .post-card:nth-child(6) { animation-delay: 0.3s; }
+    </style>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Work Less, Build",
+      "url": "https://workless.build",
+      "logo": "https://workless.build/og-image.png",
+      "description": "AI automation tools and resources for solopreneurs who value their time over performative productivity",
+      "sameAs": [],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@workless.build",
+        "contactType": "customer support"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Work Less, Build",
+      "url": "https://workless.build",
+      "description": "Automation for the anti-hustle generation",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://workless.build/archive.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "AI Automation Starter Kit",
+      "description": "51 copy-paste AI prompts + 10 automation blueprints to save 15-30 hours per week. Perfect for solopreneurs building automated businesses.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Work Less, Build"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "39.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://worklessbuild.gumroad.com/l/odgowv",
+        "seller": {
+          "@type": "Organization",
+          "name": "Work Less, Build"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1"
+      }
+    }
+    </script>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">Work Less</span>
+                    <span class="logo-accent">Build More</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="/archive.html">Articles</a>
+                <a href="/resources.html">Resources</a>
+                <a href="/about.html">About</a>
+                <a href="#newsletter" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="pulse"></span>
+                <span>Automation for the anti-hustle generation</span>
+            </div>
+            <h1>
+                <span class="strike">Work harder.</span><br>
+                Build systems that<br>
+                <span class="highlight">run themselves.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Stop trading hours for output. Build once, benefit forever. Get 51 copy-paste AI prompts + 10 automation blueprints to save 15-30 hours/week.
+            </p>
+            <div class="hero-cta-group">
+                <a href="https://worklessbuild.gumroad.com/l/odgowv" class="btn-primary">
+                    Get the Automation Kit — $39
+                </a>
+                <a href="/archive.html" class="btn-secondary">
+                    Read Articles
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number" id="articles-count">6</span>
+                <span class="stat-label">Actionable Articles</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">0</span>
+                <span class="stat-label">BS or Fluff</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Real, Tested Systems</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-prop-section" style="background: linear-gradient(135deg, #0F0F10 0%, #1A1A1C 100%); padding: 4rem 2rem; margin: 2rem 0;">
+        <div style="max-width: 1100px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; color: #B9FF66; margin-bottom: 1rem; font-weight: 700;">What You'll Find Here</h2>
+                <p style="font-size: 1.25rem; color: #9CA3AF; max-width: 700px; margin: 0 auto;">Real automation systems that save 15-30 hours every week. No fluff, no theory—just copy-paste solutions from someone who's done it.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <!-- Benefit 1 -->
+                <div style="background: rgba(185, 255, 102, 0.05); border: 1px solid rgba(185, 255, 102, 0.2); border-radius: 12px; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤖</div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif; color: #FFFFFF; font-size: 1.5rem; margin-bottom: 1rem;">AI Prompts That Actually Work</h3>
+                    <p style="color: #9CA3AF; line-height: 1.6;">51 battle-tested ChatGPT prompts for email, content, customer service, planning. Copy-paste ready. Save $200-500/month on VAs.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div style="background: rgba(185, 255, 102, 0.05); border: 1px solid rgba(185, 255, 102, 0.2); border-radius: 12px; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚙️</div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif; color: #FFFFFF; font-size: 1.5rem; margin-bottom: 1rem;">Automation Blueprints</h3>
+                    <p style="color: #9CA3AF; line-height: 1.6;">10 complete automation systems: email sequences, content pipelines, customer onboarding. Built with free tools. No coding required.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div style="background: rgba(185, 255, 102, 0.05); border: 1px solid rgba(185, 255, 102, 0.2); border-radius: 12px; padding: 2rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
+                    <h3 style="font-family: 'Space Grotesk', sans-serif; color: #FFFFFF; font-size: 1.5rem; margin-bottom: 1rem;">Real Case Studies</h3>
+                    <p style="color: #9CA3AF; line-height: 1.6;">See how founders saved $1,872-$4,080/year and 15-30 hours/week. Specific numbers, tools used, step-by-step breakdowns.</p>
+                </div>
+            </div>
+            
+            <!-- Social Proof -->
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(0, 0, 0, 0.3); border-radius: 12px;">
+                <p style="font-size: 1.125rem; color: #B9FF66; font-weight: 600; margin-bottom: 0.5rem;">Join 50+ solopreneurs who've automated their way to 40-hour weeks</p>
+                <p style="color: #9CA3AF; font-size: 0.875rem;">⭐⭐⭐⭐⭐ "I saved $800/month on my VA and got better results" — Sarah M., Content Strategist</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Latest Articles -->
+    <section class="articles-section">
+        <div class="section-header">
+            <div class="section-label">Latest Insights</div>
+            <h2 class="section-title">Build Smarter, Not Harder</h2>
+            <p class="section-subtitle">Practical automation strategies. No hustle culture. No fake productivity porn.</p>
+        </div>
+        <div class="posts-grid" id="posts-container">
+            <!-- Posts loaded dynamically -->
+        </div>
+    </section>
+    
+    
+    
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">Work Less, Build</div>
+                    <div class="footer-tagline">Build systems that run themselves</div>
+                    <p class="footer-description">
+                        Automation insights for solopreneurs who refuse to trade their life for performative productivity.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com/worklessbuild" aria-label="Twitter">𝕏</a>
+                        <a href="https://github.com/worklessbuild" aria-label="GitHub">⚡</a>
+                        <a href="/rss.xml" aria-label="RSS">📡</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Content</h4>
+                    <ul class="footer-links">
+                        <li><a href="/archive.html">All Articles</a></li>
+                        <li><a href="/resources.html">Resources</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/about.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Work Less, Build. Built by someone who values their time. | workless.build</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Load posts dynamically
+        fetch('/posts/index.json')
+            .then(res => res.json())
+            .then(posts => {
+                const container = document.getElementById('posts-container');
+                container.innerHTML = '';
+                
+                // Update article count
+                document.getElementById('articles-count').textContent = posts.length;
+                
+                posts.slice(0, 6).forEach((post, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'post-card';
+                    card.style.opacity = '0';
+                    
+                    card.innerHTML = `
+                        <div class="post-meta-top">
+                            <div class="post-category">AUTOMATION</div>
+                            <div class="post-read-time">⏱ ${post.readTime || '5'} min</div>
+                        </div>
+                        <h3><a href="${post.url}">${post.title}</a></h3>
+                        <p class="post-excerpt">${post.excerpt || 'Practical automation insights for smart builders.'}</p>
+                        <div class="post-meta-bottom">
+                            <div class="post-author">
+                                <div class="author-avatar">AC</div>
+                                <span class="author-name">Alex Chen</span>
+                            </div>
+                            <span class="post-date">${post.date}</span>
+                        </div>
+                    `;
+                    
+                    container.appendChild(card);
+                    
+                    // Trigger fade-in animation
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 50 * index);
+                });
+            })
+            .catch(() => {
+                document.getElementById('posts-container').innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; padding: 4rem 2rem; color: var(--gray-400);">
+                        <p style="font-size: 1.25rem; margin-bottom: 1rem;">Building something great...</p>
+                        <p>New articles coming soon. Subscribe to be first to know.</p>
+                    </div>
+                `;
+            });
+    </script>
+</body>
+</html>

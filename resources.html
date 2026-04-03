@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="5yO-hiYkM-bdPos-XyyBHOViJmVNog7BIGDo6SjlStw">
+    <meta name="description" content="Curated AI automation tools, workflows, and resources for solopreneurs who work less and build more.">
+    <meta name="keywords" content="AI automation tools, solopreneur resources, automation workflows, anti-hustle">
+    <title>Resources | Work Less, Build</title>
+    <link rel="canonical" href="https://workless.build/resources.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Resources | Work Less, Build">
+    <meta property="og:description" content="Curated automation tools for smart builders">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://workless.build/resources.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Colors */
+            --dark: #0A0A0B;
+            --lime: #B9FF66;
+            --lime-dark: #9FE054;
+            --white: #FFFFFF;
+            --gray-900: #1A1A1C;
+            --gray-800: #2A2A2C;
+            --gray-700: #3A3A3C;
+            --gray-400: #A1A1AA;
+            --gray-300: #D1D5DB;
+            
+            /* Typography */
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            
+            /* Effects */
+            --shadow-glow: 0 0 30px rgba(185, 255, 102, 0.3);
+            --transition: 200ms ease;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Selection */
+        ::selection {
+            background: var(--lime);
+            color: var(--dark);
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            color: var(--white);
+        }
+        
+        .logo-accent {
+            color: var(--lime);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--lime);
+            transition: width var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--lime);
+            color: var(--dark) !important;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        
+        .nav-cta::after {
+            display: none;
+        }
+        
+        .nav-cta:hover {
+            background: var(--lime-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(185, 255, 102, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--lime);
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .hero p {
+            font-size: 1.375rem;
+            color: var(--gray-300);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem;
+        }
+        
+        /* Section */
+        .section {
+            margin-bottom: 5rem;
+        }
+        
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-label {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--lime);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-400);
+            max-width: 700px;
+        }
+        
+        /* Resources Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .resource-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--lime);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+        
+        .resource-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+        
+        .resource-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+        
+        .resource-card p {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--lime);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .resource-link:hover {
+            gap: 0.75rem;
+        }
+        
+        /* Featured Card */
+        .featured-card {
+            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+            border: 2px solid var(--lime);
+            position: relative;
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--lime);
+            color: var(--dark);
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Coming Soon Card */
+        .coming-soon-card {
+            background: var(--gray-900);
+            border: 2px dashed var(--gray-800);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            grid-column: 1 / -1;
+        }
+        
+        .coming-soon-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+        
+        .coming-soon-card p {
+            color: var(--gray-400);
+            font-size: 1.125rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            text-align: center;
+            margin-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--lime), #10B981);
+        }
+        
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .cta-section p {
+            font-size: 1.25rem;
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--lime);
+            color: var(--dark);
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .cta-button:hover {
+            background: var(--lime-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 5rem 2rem 2rem;
+            border-top: 1px solid var(--gray-800);
+            margin-top: 6rem;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: var(--lime);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.125rem;
+        }
+        
+        .footer-social a:hover {
+            background: var(--lime);
+            color: var(--dark);
+            border-color: var(--lime);
+            transform: translateY(-3px);
+        }
+        
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.875rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .nav-links a:not(.nav-cta) {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero p {
+                font-size: 1.125rem;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cta-section {
+                padding: 3rem 2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">Work Less</span>
+                    <span class="logo-accent">Build More</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="/archive.html">Articles</a>
+                <a href="/resources.html">Resources</a>
+                <a href="/about.html">About</a>
+                <a href="/#newsletter" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🛠️ Curated Tools</div>
+            <h1>Resources</h1>
+            <p>Hand-picked automation tools and workflows for smart builders. No sponsored posts. No affiliate fluff.</p>
+        </div>
+    </div>
+    
+    <!-- Resources -->
+    <div class="container">
+        <!-- Essential Tools -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-label">Essential Stack</div>
+                <h2 class="section-title">Core Automation Tools</h2>
+                <p class="section-subtitle">The foundation every solopreneur automation stack needs. Battle-tested, ROI-positive.</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card featured-card">
+                    <div class="featured-badge">Recommended</div>
+                    <span class="resource-icon">🤖</span>
+                    <h3>ChatGPT</h3>
+                    <p>The foundational AI assistant. Essential for content, ideation, and rapid prototyping. Start here.</p>
+                    <a href="https://chat.openai.com" target="_blank" rel="noopener" class="resource-link">
+                        Visit ChatGPT →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-icon">⚡</span>
+                    <h3>Make (Integromat)</h3>
+                    <p>Visual automation platform. Connect APIs and build complex workflows without writing code.</p>
+                    <a href="https://make.com" target="_blank" rel="noopener" class="resource-link">
+                        Visit Make →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-icon">🔗</span>
+                    <h3>Zapier</h3>
+                    <p>The classic automation platform. Vast integration library. Perfect for simple workflows.</p>
+                    <a href="https://zapier.com" target="_blank" rel="noopener" class="resource-link">
+                        Visit Zapier →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-icon">💬</span>
+                    <h3>Claude</h3>
+                    <p>Anthropic's AI assistant. Superior for long-form analysis, research, and nuanced thinking tasks.</p>
+                    <a href="https://claude.ai" target="_blank" rel="noopener" class="resource-link">
+                        Visit Claude →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-icon">📊</span>
+                    <h3>Airtable</h3>
+                    <p>Database meets spreadsheet. Central hub for data-driven automation workflows.</p>
+                    <a href="https://airtable.com" target="_blank" rel="noopener" class="resource-link">
+                        Visit Airtable →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-icon">🎨</span>
+                    <h3>Midjourney</h3>
+                    <p>AI image generation. Best-in-class for creative, artistic, and marketing visuals.</p>
+                    <a href="https://midjourney.com" target="_blank" rel="noopener" class="resource-link">
+                        Visit Midjourney →
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Learning Resources -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-label">Learn & Grow</div>
+                <h2 class="section-title">Learning Resources</h2>
+                <p class="section-subtitle">Learn from practitioners, not theorists. Real automation, real results.</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <span class="resource-icon">📰</span>
+                    <h3>Our Newsletter</h3>
+                    <p>Weekly AI automation insights. Zero fluff. 100% actionable. Join 2,500+ builders.</p>
+                    <a href="/#newsletter" class="resource-link">
+                        Subscribe Free →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-icon">📚</span>
+                    <h3>All Articles</h3>
+                    <p>Complete archive of automation guides, case studies, and insights. Start anywhere.</p>
+                    <a href="/archive.html" class="resource-link">
+                        Browse Archive →
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <span class="resource-icon">💡</span>
+                    <h3>Case Studies</h3>
+                    <p>How real solopreneurs use AI to scale. Numbers, workflows, lessons learned.</p>
+                    <a href="#" class="resource-link">
+                        Coming Soon →
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Workflow Templates -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-label">Ready-Made Workflows</div>
+                <h2 class="section-title">Automation Templates</h2>
+                <p class="section-subtitle">Copy-paste workflows you can implement in minutes. No setup headaches.</p>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="coming-soon-card">
+                    <span style="font-size: 3rem; display: block; margin-bottom: 1rem;">🚀</span>
+                    <h3>Workflow Library Coming Soon</h3>
+                    <p>Pre-built automation templates for content, lead gen, analytics, and more.<br>Subscribe to our newsletter to get notified at launch.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Want More Resources?</h2>
+            <p>Join 2,500+ solopreneurs getting weekly automation tools and workflows</p>
+            <a href="/#newsletter" class="cta-button">
+                Subscribe Free →
+            </a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">Work Less, Build</div>
+                    <div class="footer-tagline">Build systems that run themselves</div>
+                    <p class="footer-description">
+                        Automation insights for solopreneurs who refuse to trade their life for performative productivity.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://twitter.com/worklessbuild" aria-label="Twitter">𝕏</a>
+                        <a href="https://github.com/worklessbuild" aria-label="GitHub">⚡</a>
+                        <a href="/rss.xml" aria-label="RSS">📡</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Content</h4>
+                    <ul class="footer-links">
+                        <li><a href="/archive.html">All Articles</a></li>
+                        <li><a href="/resources.html">Resources</a></li>
+                        <li><a href="/#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/about.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Work Less, Build. Built by someone who values their time. | workless.build</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

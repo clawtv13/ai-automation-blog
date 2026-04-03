@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Work Less, Build — Automation insights for solopreneurs who refuse to trade their life for performative productivity.">
+    <title>About | Work Less, Build</title>
+    <link rel="canonical" href="https://workless.build/about.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --dark: #0A0A0B;
+            --lime: #B9FF66;
+            --white: #FFFFFF;
+            --gray-900: #1A1A1C;
+            --gray-800: #2A2A2C;
+            --gray-400: #9CA3AF;
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--white);
+            background: var(--dark);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Navigation - Same as index.html */
+        nav {
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+        
+        .nav-cta {
+            background: var(--lime);
+            color: var(--dark) !important;
+            padding: 0.65rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+        
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+        }
+        
+        .highlight {
+            color: var(--lime);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.375rem;
+            color: var(--gray-400);
+            line-height: 1.7;
+        }
+        
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        .content-section {
+            margin-bottom: 4rem;
+        }
+        
+        .content-section h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--lime);
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-section p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--gray-400);
+            margin-bottom: 1.5rem;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .principle-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        
+        .principle-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--lime);
+            margin-bottom: 0.75rem;
+        }
+        
+        .principle-card p {
+            font-size: 1rem;
+            color: var(--gray-400);
+            margin-bottom: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--gray-900);
+            border: 2px solid var(--lime);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .cta-section h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--gray-400);
+            margin-bottom: 2rem;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: var(--lime);
+            color: var(--dark);
+            padding: 1.25rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(185, 255, 102, 0.3);
+        }
+        
+        /* Footer - Simplified */
+        footer {
+            background: var(--dark);
+            border-top: 1px solid var(--gray-800);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            color: var(--gray-400);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.125rem; }
+            .content { padding: 3rem 1.5rem; }
+            .principles-grid { grid-template-columns: 1fr; }
+            .cta-section { padding: 2rem 1.5rem; }
+            .nav-links a:not(.nav-cta) { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">Work Less, Build</a>
+            <div class="nav-links">
+                <a href="/archive.html">Articles</a>
+                <a href="/resources.html">Resources</a>
+                <a href="/about.html">About</a>
+                <a href="/#newsletter" class="nav-cta">Subscribe</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Build Systems That <span class="highlight">Run Themselves</span></h1>
+            <p class="hero-subtitle">
+                Practical automation insights for solopreneurs who refuse to trade their life for performative productivity.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Content -->
+    <div class="content">
+        <section class="content-section">
+            <h2>Who This Is For</h2>
+            <p>
+                You're a solopreneur, indie hacker, or small business owner. You've seen the hustle culture tweets. You've heard the "grind never stops" mantras. And you're tired of it.
+            </p>
+            <p>
+                You want to build something meaningful without sacrificing your health, relationships, or sanity. You believe in smart work, not just hard work. You want systems that scale without scaling your hours.
+            </p>
+            <p>
+                <strong>This is for you.</strong>
+            </p>
+        </section>
+        
+        <section class="content-section">
+            <h2>What We Believe</h2>
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <h3>🎯 Efficiency Over Grind</h3>
+                    <p>Working 80 hours doesn't make you more productive. Build better systems instead.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>🤖 Automation Is Freedom</h3>
+                    <p>Every automated task is time reclaimed. Build once, benefit forever.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>💡 Smart, Not Hard</h3>
+                    <p>Intelligence beats effort. Work with your brain, not against it.</p>
+                </div>
+                <div class="principle-card">
+                    <h3>✨ Honesty Over Hype</h3>
+                    <p>No fake metrics. No BS. Just real systems that actually work.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>The Mission</h2>
+            <p>
+                Every week, we share <strong>one automation insight</strong> that helps you work less while building more. These aren't theoretical think pieces or academic exercises. They're battle-tested strategies from someone who's built multiple automated businesses.
+            </p>
+            <p>
+                No fluff. No filler. No fake social proof. Just practical systems you can implement today.
+            </p>
+        </section>
+        
+        <section class="content-section">
+            <h2>Who Writes This</h2>
+            <p>
+                Hi, I'm Alex Chen. I run multiple automated content businesses that generate revenue while I sleep, travel, or spend time with family. I'm not special — I just learned to build systems instead of working harder.
+            </p>
+            <p>
+                This newsletter is me sharing what actually works. No gatekeeping. No courses to sell. Just insights.
+            </p>
+        </section>
+        
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Ready to Work Less?</h2>
+            <p>Join builders getting weekly automation insights. Real systems, zero grind.</p>
+            <a href="/#newsletter" class="btn-primary">Get Free Insights →</a>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/archive.html">Articles</a>
+            <a href="/resources.html">Resources</a>
+            <a href="/about.html">About</a>
+            <a href="/privacy.html">Privacy</a>
+        </div>
+        <p>© 2026 Work Less, Build. Built by someone who values their time. | workless.build</p>
+    </footer>
+</body>
+</html>
