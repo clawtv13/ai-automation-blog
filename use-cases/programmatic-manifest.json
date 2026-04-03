@@ -1,0 +1,52 @@
+[
+  {
+    "tool": "Claude",
+    "use_case": "Coding",
+    "path": "ai-automation-blog/blog-new/use-cases/claude-for-coding.html"
+  },
+  {
+    "tool": "ChatGPT",
+    "use_case": "Content Writing",
+    "path": "ai-automation-blog/blog-new/use-cases/chatgpt-for-content-writing.html"
+  },
+  {
+    "tool": "Make",
+    "use_case": "Workflow Automation",
+    "path": "ai-automation-blog/blog-new/use-cases/make-for-workflow-automation.html"
+  },
+  {
+    "tool": "Midjourney",
+    "use_case": "Product Mockups",
+    "path": "ai-automation-blog/blog-new/use-cases/midjourney-for-product-mockups.html"
+  },
+  {
+    "tool": "Cursor",
+    "use_case": "Coding",
+    "path": "ai-automation-blog/blog-new/use-cases/cursor-for-coding.html"
+  },
+  {
+    "tool": "Notion",
+    "use_case": "Project Management",
+    "path": "ai-automation-blog/blog-new/use-cases/notion-for-project-management.html"
+  },
+  {
+    "tool": "Perplexity",
+    "use_case": "Research & Analysis",
+    "path": "ai-automation-blog/blog-new/use-cases/perplexity-for-research.html"
+  },
+  {
+    "tool": "v0",
+    "use_case": "UI Design",
+    "path": "ai-automation-blog/blog-new/use-cases/v0-for-ui-design.html"
+  },
+  {
+    "tool": "ChatGPT",
+    "use_case": "Customer Support",
+    "path": "ai-automation-blog/blog-new/use-cases/chatgpt-for-customer-support.html"
+  },
+  {
+    "tool": "Canva",
+    "use_case": "Social Media Content",
+    "path": "ai-automation-blog/blog-new/use-cases/canva-for-social-media.html"
+  }
+]

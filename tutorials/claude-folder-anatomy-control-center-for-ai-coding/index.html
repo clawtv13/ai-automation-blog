@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Most Claude Code users treat the .claude folder like a black box. They know it exists. They've seen it appear in their project root. But they've never opened it, let alone understood what every file d..." name="description"/>
+<meta content="AI automation, productivity, .claude" name="keywords"/>
+<title>.claude Folder Anatomy: Control Center for AI Coding | Work Less, Build</title>
+<link href="https://workless.build/blog/2026-03-29-claude-folder-anatomy-control-center-for-ai-coding.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content=".claude Folder Anatomy: Control Center for AI Coding" property="og:title"/>
+<meta content="Most Claude Code users treat the .claude folder like a black box. They know it exists. They've seen it appear in their project root. But they've never opened it, let alone understood what every file d..." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://workless.build/blog/2026-03-29-claude-folder-anatomy-control-center-for-ai-coding.html" property="og:url"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content=".claude Folder Anatomy: Control Center for AI Coding" name="twitter:title"/>
+<meta content="Most Claude Code users treat the .claude folder like a black box. They know it exists. They've seen it appear in their project root. But they've never opened it, let alone understood what every file d..." name="twitter:description"/>
+<!-- Author metadata -->
+<meta content="Alex Chen" name="author"/>
+<meta content="2026-03-29T00:00:00" name="article:published_time"/>
+<meta content="2026-03-29T00:00:00" name="article:modified_time"/>
+<meta content="AI Automation" name="article:section"/>
+<meta content="AI automation, productivity, .claude" name="article:tag"/>
+<!-- JSON-LD Structured Data for Article -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": ".claude Folder Anatomy: Control Center for AI Coding",
+      "description": "Most Claude Code users treat the .claude folder like a black box. They know it exists. They've seen it appear in their project root. But they've never opened it, let alone understood what every file d...",
+      "image": "https://workless.build/og-default.png",
+      "datePublished": "2026-03-29T00:00:00",
+      "dateModified": "2026-03-29T00:00:00",
+      "author": {
+        "@type": "Person",
+        "name": "Alex Chen"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Work Less, Build",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://workless.build/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://workless.build/blog/2026-03-29-claude-folder-anatomy-control-center-for-ai-coding.html"
+      },
+      "keywords": "AI automation, productivity, .claude",
+      "articleSection": "AI Automation",
+      "wordCount": "1717"
+    }
+    </script>
+<!-- Breadcrumb Structured Data -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://workless.build/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://workless.build/archive.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": ".claude Folder Anatomy: Control Center for AI Coding",
+          "item": "https://workless.build/blog/2026-03-29-claude-folder-anatomy-control-center-for-ai-coding.html"
+        }
+      ]
+    }
+    </script>
+<!-- Alternate RSS Feed -->
+<link href="https://workless.build/rss.xml" rel="alternate" title="Work Less, Build RSS Feed" type="application/rss+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Colors */
+            --dark: #0A0A0B;
+            --lime: #B9FF66;
+            --lime-dark: #9FE054;
+            --white: #FFFFFF;
+            --gray-900: #1A1A1C;
+            --gray-800: #2A2A2C;
+            --gray-700: #3A3A3C;
+            --gray-400: #A1A1AA;
+            --gray-300: #D1D5DB;
+            
+            /* Typography */
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+            
+            /* Spacing */
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            
+            /* Effects */
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 30px rgba(185, 255, 102, 0.3);
+            --transition: 200ms ease;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--white);
+            background: var(--dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Selection */
+        ::selection {
+            background: var(--lime);
+            color: var(--dark);
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            color: var(--white);
+        }
+        
+        .logo-accent {
+            color: var(--lime);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+        }
+        
+        .breadcrumb-list {
+            display: flex;
+            list-style: none;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            align-items: center;
+        }
+        
+        .breadcrumb-list a {
+            color: var(--lime);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb-list a:hover {
+            color: var(--lime-dark);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--gray-400);
+        }
+        
+        /* Article Header */
+        .article-header {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+        }
+        
+        .article-category {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--dark);
+            background: var(--lime);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--white);
+        }
+        
+        .article-excerpt {
+            font-size: 1.375rem;
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        
+        /* Author Card */
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.75rem;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            transition: var(--transition);
+        }
+        
+        .author-card:hover {
+            border-color: var(--lime);
+        }
+        
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lime), #10B981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--white);
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-title {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-left: auto;
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+        
+        /* Article Content */
+        article {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+        
+        article h2 {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            color: var(--white);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        
+        article h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: var(--white);
+            line-height: 1.3;
+        }
+        
+        article h4 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+            color: var(--white);
+        }
+        
+        article p {
+            margin-bottom: 1.75rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--gray-300);
+        }
+        
+        article strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        article em {
+            font-style: italic;
+            color: var(--lime);
+        }
+        
+        article ul, article ol {
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+        
+        article li {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--gray-300);
+        }
+        
+        article li::marker {
+            color: var(--lime);
+        }
+        
+        article a {
+            color: var(--lime);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        article a:hover {
+            border-bottom-color: var(--lime);
+        }
+        
+        article code {
+            font-family: var(--font-code);
+            background: var(--gray-900);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: var(--lime);
+            border: 1px solid var(--gray-800);
+        }
+        
+        article pre {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            padding: 2rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            line-height: 1.6;
+        }
+        
+        article pre code {
+            background: none;
+            padding: 0;
+            border: none;
+            color: var(--gray-300);
+            font-size: 0.95rem;
+        }
+        
+        article blockquote {
+            border-left: 4px solid var(--lime);
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
+            background: var(--gray-900);
+            border-radius: 0 12px 12px 0;
+        }
+        
+        article blockquote p {
+            margin: 0;
+            font-style: italic;
+            color: var(--gray-300);
+        }
+        
+        /* Post Footer */
+        .post-footer {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            padding: 2rem 2rem 0;
+            border-top: 1px solid var(--gray-800);
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+        
+        /* Newsletter CTA */
+        .newsletter-cta {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .newsletter-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 3.5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--lime), #10B981);
+        }
+        
+        .newsletter-card h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .newsletter-card p {
+            font-size: 1.125rem;
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 1.125rem 1.5rem;
+            background: var(--dark);
+            border: 2px solid var(--gray-800);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: var(--gray-400);
+        }
+        
+        .newsletter-form button {
+            padding: 1.125rem 2rem;
+            background: var(--lime);
+            color: var(--dark);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--lime-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            max-width: 1280px;
+            margin: 5rem auto 0;
+            padding: 0 2rem;
+        }
+        
+        .related-header {
+            margin-bottom: 2.5rem;
+        }
+        
+        .related-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+        
+        .related-subtitle {
+            color: var(--gray-400);
+            font-size: 1.125rem;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .related-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--lime);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+        
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .related-card-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--lime);
+            margin-bottom: 1rem;
+        }
+        
+        .related-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            color: var(--white);
+        }
+        
+        .related-card h4 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        
+        .related-card:hover h4 a {
+            color: var(--lime);
+        }
+        
+        .related-card-excerpt {
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+        
+        .related-card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--gray-800);
+        }
+        
+        /* Back Navigation */
+        .back-nav {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .back-link:hover {
+            color: var(--lime);
+            transform: translateX(-4px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 5rem 2rem 2rem;
+            border-top: 1px solid var(--gray-800);
+            margin-top: 6rem;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: var(--lime);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.125rem;
+        }
+        
+        .footer-social a:hover {
+            background: var(--lime);
+            color: var(--dark);
+            border-color: var(--lime);
+            transform: translateY(-3px);
+        }
+        
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.875rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 1.25rem;
+            }
+            
+            .nav-links a:not(:last-child) {
+                display: none;
+            }
+            
+            .article-title {
+                font-size: 2.5rem;
+            }
+            
+            .article-excerpt {
+                font-size: 1.125rem;
+            }
+            
+            .author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .article-meta {
+                margin-left: 0;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            article h2 {
+                font-size: 1.875rem;
+            }
+            
+            article h3 {
+                font-size: 1.5rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form button {
+                width: 100%;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+    </style>
+<style>
+.breadcrumbs {
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    color: #666;
+}
+.breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+.breadcrumbs li:not(:last-child)::after {
+    content: " › ";
+    padding: 0 0.5rem;
+    color: #999;
+}
+.breadcrumbs a {
+    color: #0066cc;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+</style>
+<style>
+.main-nav {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+.nav-menu a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #0066cc;
+}
+</style>
+</head>
+<body><nav class="main-nav">
+<div class="nav-container">
+<a class="nav-logo" href="/">Work Less, Build</a>
+<ul class="nav-menu">
+<li><a href="/">Home</a></li>
+<li><a href="/ai-tools/">AI Tools</a></li>
+<li><a href="/solo-founder-strategies/">Solo Founder</a></li>
+<li><a href="/case-studies/">Case Studies</a></li>
+<li><a class="active" href="/tutorials/">Tutorials</a></li>
+</ul>
+</div>
+</nav><nav aria-label="Breadcrumb" class="breadcrumbs">
+<ol itemscope="" itemtype="https://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+<meta content="1" itemprop="position"/>
+</li>
+<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="/tutorials/" itemprop="item"><span itemprop="name">Tutorials &amp; Guides</span></a>
+<meta content="2" itemprop="position"/>
+</li>
+<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<span itemprop="name">.claude Folder Anatomy: Control Center for AI Coding</span>
+<meta content="3" itemprop="position"/>
+</li>
+</ol>
+</nav>
+<!-- Navigation -->
+<nav>
+<div class="nav-container">
+<a class="logo" href="/">
+<div class="logo-text">
+<span class="logo-main">Work Less</span>
+<span class="logo-accent">Build More</span>
+</div>
+</a>
+<div class="nav-links">
+<a href="/archive.html">Articles</a>
+<a href="/resources.html">Resources</a>
+<a href="/about.html">About</a>
+<a href="#newsletter">Subscribe</a>
+</div>
+</div>
+</nav>
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+<ol class="breadcrumb-list">
+<li><a href="/">Home</a></li>
+<li class="breadcrumb-separator">→</li>
+<li><a href="/archive.html">Articles</a></li>
+<li class="breadcrumb-separator">→</li>
+<li>.claude Folder Anatomy: Control Center for AI Codi...</li>
+</ol>
+</div>
+<!-- Back Navigation -->
+<div class="back-nav">
+<a class="back-link" href="/archive.html">← Back to all articles</a>
+</div>
+<!-- Article Header -->
+<div class="article-header">
+<div class="article-category">AUTOMATION</div>
+<h1 class="article-title">.claude Folder Anatomy: Control Center for AI Coding</h1>
+<p class="article-excerpt">Most Claude Code users treat the .claude folder like a black box. They know it exists. They've seen it appear in their project root. But they've never opened it, let alone understood what every file d...</p>
+<div class="author-card">
+<div class="author-avatar">AC</div>
+<div class="author-info">
+<div class="author-name">Alex Chen</div>
+<div class="author-title">Builder &amp; Automation Architect</div>
+</div>
+<div class="article-meta">
+<span>📅 March 29, 2026</span>
+<span>⏱️ 7 min read</span>
+</div>
+</div>
+</div>
+<!-- Article Content -->
+<article>
+<p>March 29, 2026 • 9 min read • 569 HN points </p>
+<h1>.claude Folder Anatomy: Control Center for AI Coding</h1>
+<p>🧑‍💻</p>
+<p>Alex Chen</p>
+<p>AI Engineer @ workless.build</p>
+<p>Most <a href="/ai-tools/llms/">Claude</a> Code users treat the <code>.claude</code> folder like a black box. They know it exists. They've seen it appear in their project root. But they've never opened it, let alone understood what every file does.</p>
+<p>That's leaving 80% of <a href="/ai-tools/llms/">Claude</a>'s power on the table.</p>
+<p>The <code>.claude</code> folder is your control center. It holds your instructions, your custom commands, your permission rules, and Claude's memory across sessions. Once you understand what lives where, you can configure Claude to behave exactly how your workflow needs it to.</p>
+<h2>Two .claude Directories, Not One</h2>
+<p>Before we dive in, here's something that trips everyone up: <strong>there are actually two .claude directories.</strong></p>
+<p><strong>/your-project/.claude/</strong> ← Team config (committed to git)<br/>
+<strong>~/.claude/</strong> ← Personal config (machine-local) </p>
+<p>Project-level config is shared. Everyone on your team gets the same rules, same commands, same conventions.</p>
+<p>Global <code>~/.claude/</code> holds your personal preferences and machine state — session history, auto-memory, your own custom commands.</p>
+<p>Claude reads both and merges them. Project rules take precedence.</p>
+<h2>CLAUDE.md: The Most Important File</h2>
+<p>When you start a Claude Code session, the first thing it reads is <code>CLAUDE.md</code>. This file loads straight into the system prompt and stays in context for the entire conversation.</p>
+<p><strong>Whatever you write in CLAUDE.md, Claude will follow.</strong></p>
+<p>Tell Claude to always write tests before implementation? It will.</p>
+<p>Say "never use <code>console.log</code> for errors, always use our custom logger"? It will respect that every time.</p>
+<p>Most people either write too much or too little. Here's what actually works:</p>
+<h3>Write:</h3>
+<ul>
+<li>Build, test, and lint commands (<code>npm run test</code>, <code>make build</code>)</li>
+<li>Key architectural decisions ("monorepo with Turborepo")</li>
+<li>Non-obvious gotchas ("TypeScript strict mode, unused vars are errors")</li>
+<li>Import conventions, naming patterns, error handling style</li>
+<li>File and folder structure for main modules</li>
+</ul>
+<h3>Don't write:</h3>
+<ul>
+<li>Anything that belongs in a linter config</li>
+<li>Full documentation you can already link to</li>
+<li>Long theoretical explanations</li>
+</ul>
+<p><strong>Keep CLAUDE.md under 200 lines.</strong> Files longer than that eat too much context, and Claude's instruction adherence actually drops.</p>
+<p><strong>Example: Minimal but effective CLAUDE.md</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">#</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="n">Setup</span>
+
+<span class="err">##</span><span class="w"> </span><span class="n">Tech</span><span class="w"> </span><span class="n">Stack</span>
+<span class="o">-</span><span class="w"> </span><span class="k">Next</span><span class="p">.</span><span class="n">js</span><span class="w"> </span><span class="mi">14</span><span class="w"> </span><span class="p">(</span><span class="n">App</span><span class="w"> </span><span class="n">Router</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="n">TypeScript</span><span class="w"> </span><span class="n">strict</span><span class="w"> </span><span class="n">mode</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Tailwind</span><span class="w"> </span><span class="n">CSS</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Prisma</span><span class="w"> </span><span class="n">ORM</span>
+
+<span class="err">##</span><span class="w"> </span><span class="n">Commands</span>
+<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">npm</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">dev</span><span class="err">`</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="k">Start</span><span class="w"> </span><span class="n">dev</span><span class="w"> </span><span class="n">server</span>
+<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">npm</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">build</span><span class="err">`</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="n">Production</span><span class="w"> </span><span class="n">build</span>
+<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">npm</span><span class="w"> </span><span class="n">test</span><span class="err">`</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="n">Run</span><span class="w"> </span><span class="n">tests</span><span class="w"> </span><span class="p">(</span><span class="n">Vitest</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="err">`</span><span class="n">npm</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="n">lint</span><span class="err">`</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="n">ESLint</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Prettier</span>
+
+<span class="err">##</span><span class="w"> </span><span class="n">Code</span><span class="w"> </span><span class="n">Conventions</span>
+<span class="o">-</span><span class="w"> </span><span class="k">Use</span><span class="w"> </span><span class="n">named</span><span class="w"> </span><span class="n">exports</span><span class="p">,</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="k">default</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Error</span><span class="w"> </span><span class="nl">handling</span><span class="p">:</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">custom</span><span class="w"> </span><span class="n">AppError</span><span class="p">,</span><span class="w"> </span><span class="n">never</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="n">Error</span>
+<span class="o">-</span><span class="w"> </span><span class="k">Database</span><span class="w"> </span><span class="nl">queries</span><span class="p">:</span><span class="w"> </span><span class="n">always</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">Prisma</span><span class="p">,</span><span class="w"> </span><span class="n">never</span><span class="w"> </span><span class="n">raw</span><span class="w"> </span><span class="k">SQL</span>
+<span class="o">-</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="nl">routes</span><span class="p">:</span><span class="w"> </span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">api</span><span class="o">/[</span><span class="n">resource</span><span class="o">]/</span><span class="n">route</span><span class="p">.</span><span class="n">ts</span>
+
+<span class="err">##</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="k">Structure</span>
+<span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">app</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="k">Next</span><span class="p">.</span><span class="n">js</span><span class="w"> </span><span class="n">pages</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">API</span><span class="w"> </span><span class="n">routes</span>
+<span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">components</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="n">React</span><span class="w"> </span><span class="n">components</span><span class="w"> </span><span class="p">(</span><span class="n">client</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">server</span><span class="p">)</span>
+<span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">lib</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="n">Utilities</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">shared</span><span class="w"> </span><span class="n">logic</span>
+<span class="o">-</span><span class="w"> </span><span class="o">/</span><span class="n">prisma</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="k">Database</span><span class="w"> </span><span class="k">schema</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">migrations</span>
+</code></pre></div>
+<p>That's ~20 lines. It gives Claude everything it needs without constant clarification.</p>
+<h2>CLAUDE.local.md: Your Personal Overrides</h2>
+<p>Sometimes you have preferences specific to you. Maybe you prefer a different test runner, or you want Claude to open files differently.</p>
+<p>Create <code>CLAUDE.local.md</code> in your project root. Claude reads it alongside the main <code>CLAUDE.md</code>, and it's automatically gitignored so your personal tweaks never land in the repo.</p>
+<p><strong>Pro tip:</strong> Use <code>CLAUDE.local.md</code> for debugging preferences. Tell Claude to always log intermediate steps, or to prefer verbose error messages. When you push to production, your teammates don't inherit your debug mode. </p>
+<h2>rules/: Split Instructions by Concern</h2>
+<p><code>CLAUDE.md</code> works great for a single project. But once your team grows, you end up with a 300-line file that nobody maintains.</p>
+<p>The <code>rules/</code> folder solves that.</p>
+<p>Every markdown file inside <code>.claude/rules/</code> gets loaded alongside <code>CLAUDE.md</code> automatically. Instead of one giant file, you split instructions by domain:</p>
+<p>.claude/rules/<br/>
+├── api-conventions.md<br/>
+├── testing.md<br/>
+├── database.md<br/>
+└── deployment.md </p>
+<p>Each file stays <a href="/solo-founder-strategies/productivity/">focus</a>ed. The team member who owns API conventions edits <code>api-conventions.md</code>. The person who owns testing edits <code>testing.md</code>. Nobody stomps on each other.</p>
+<h3>Path-Scoped Rules</h3>
+<p>The real power: <strong>rules that only load for specific files.</strong></p>
+<p>Add YAML frontmatter to a rule file and it only activates when Claude is working with matching paths:</p>
+<div class="codehilite"><pre><span></span><code>---
+paths:
+  <span class="k">-</span> "src/api/**"
+  <span class="k">-</span> "src/handlers/**"
+---
+
+<span class="gh">#</span> API Handler Rules
+
+All API handlers must:
+<span class="k">-</span> Validate input with Zod schemas
+<span class="k">-</span> Return standardized error responses
+<span class="k">-</span> Log requests to our observability stack
+</code></pre></div>
+<p>Claude won't load this when editing a React component. It only loads when working inside <code>src/api/</code> or <code>src/handlers/</code>.</p>
+<p>Rules without a <code>paths</code> field load unconditionally.</p>
+<p>This is the right pattern once your <code>CLAUDE.md</code> starts feeling crowded.</p>
+<h2>commands/: Custom Slash Commands</h2>
+<p>Out of the box, Claude Code has built-in commands like <code>/help</code> and <code>/compact</code>. The <code>commands/</code> folder lets you add your own.</p>
+<p>Every markdown file you drop into <code>.claude/commands/</code> becomes a slash command.</p>
+<p>A file named <code>review.md</code> creates <code>/project:review</code>. A file named <code>fix-issue.md</code> creates <code>/project:fix-issue</code>.</p>
+<p>Here's a simple example:</p>
+<div class="codehilite"><pre><span></span><code>#<span class="w"> </span><span class="p">.</span><span class="n">claude</span><span class="o">/</span><span class="n">commands</span><span class="o">/</span><span class="n">review</span><span class="p">.</span><span class="n">md</span>
+
+<span class="n">Review</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">changes</span><span class="w"> </span><span class="s">in</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">current</span><span class="w"> </span><span class="s">branch:</span>
+
+```
+<span class="sx">!git diff main...HEAD</span>
+```
+
+<span class="n">Look</span><span class="w"> </span><span class="s">for:</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Breaking</span><span class="w"> </span><span class="n">changes</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Missing</span><span class="w"> </span><span class="n">tests</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Performance</span><span class="w"> </span><span class="n">issues</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Security</span><span class="w"> </span><span class="n">vulnerabilities</span>
+</code></pre></div>
+<p>Now run <code>/project:review</code> and Claude automatically injects the real git diff into the prompt before processing it.</p>
+<p>The <code>!</code> backtick syntax runs shell commands and embeds the output. That's what makes custom commands genuinely useful instead of just saved text.</p>
+<h3>Commands with Arguments</h3>
+<p>Use <code>$ARGUMENTS</code> to pass text after the command name:</p>
+<div class="codehilite"><pre><span></span><code>#<span class="w"> </span><span class="p">.</span><span class="n">claude</span><span class="o">/</span><span class="n">commands</span><span class="o">/</span><span class="nb">fix</span><span class="o">-</span><span class="n">issue</span><span class="p">.</span><span class="n">md</span>
+
+<span class="n">Analyze</span><span class="w"> </span><span class="s">GitHub</span><span class="w"> </span><span class="s">issue</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">propose</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">fix:</span>
+
+```
+<span class="sx">!gh issue view $ARGUMENTS --json title,body,comments</span>
+```
+
+<span class="n">Based</span><span class="w"> </span><span class="s">on</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">issue</span><span class="w"> </span><span class="s">above,</span><span class="w"> </span><span class="s">suggest:</span>
+<span class="mf">1.</span><span class="w"> </span><span class="n">Root</span><span class="w"> </span><span class="n">cause</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Implementation</span><span class="w"> </span><span class="n">approach</span>
+<span class="mf">3.</span><span class="w"> </span><span class="nb">Test</span><span class="w"> </span><span class="n">cases</span><span class="w"> </span><span class="n">needed</span>
+</code></pre></div>
+<p>Running <code>/project:fix-issue 234</code> fetches issue #234 and feeds it to Claude.</p>
+<h3>Personal Commands</h3>
+<p>Project commands in <code>.claude/commands/</code> are committed and shared. For commands you want everywhere regardless of project, put them in <code>~/.claude/commands/</code>.</p>
+<p>Those show up as <code>/user:command-name</code> instead of <code>/project:command-name</code>.</p>
+<p>Useful personal commands:</p>
+<ul>
+<li>Daily standup helper</li>
+<li>Commit message generator following your style</li>
+<li>Quick security scan</li>
+<li>Explain this codebase (for jumping into new projects)</li>
+</ul>
+<h2>skills/: Automatically Triggered Workflows</h2>
+<p>Commands are <strong>explicit</strong> — you type <code>/project:review</code> to trigger them.</p>
+<p>Skills are <strong>automatic</strong> — Claude decides when to use them based on your request.</p>
+<p>Example: You have a skill for "deploy to staging." When you say "push this to staging," Claude sees the skill, realizes it matches, and executes it without you typing a slash command.</p>
+<p>Skills are more complex than commands because they include:</p>
+<ul>
+<li>Trigger conditions (when to activate)</li>
+<li>Multi-step workflows</li>
+<li>Error handling</li>
+</ul>
+<p>Most solo builders don't need skills. Commands are simpler and cover 90% of use cases. But if you're building repeated multi-step <a href="/solo-founder-strategies/business-systems/">processes</a>, skills are worth learning.</p>
+<h2>Practical Workflow for Solo Builders</h2>
+<p>Here's my current setup after two months of heavy Claude Code usage:</p>
+<h3>Project-Level (.claude/ in repo)</h3>
+<ul>
+<li><strong>CLAUDE.md:</strong> Tech stack, key commands, 15-20 lines</li>
+<li><strong>commands/review.md:</strong> Git diff analysis</li>
+<li><strong>commands/deploy-staging.md:</strong> Deploy script with safety checks</li>
+<li><strong>rules/api.md:</strong> API conventions (path-scoped to <code>src/api/</code>)</li>
+</ul>
+<h3>Global (~/.claude/)</h3>
+<ul>
+<li><strong>CLAUDE.md:</strong> My personal coding preferences</li>
+<li><strong>commands/standup.md:</strong> Generate standup based on recent commits</li>
+<li><strong>commands/commit.md:</strong> Generate commit message from staged changes</li>
+</ul>
+<h3>Typical Session</h3>
+<ol>
+<li>Open Claude Code in project</li>
+<li>Claude auto-loads project CLAUDE.md + my global preferences</li>
+<li>I ask "refactor the auth system to use middleware"</li>
+<li>Claude knows our auth conventions from <code>rules/api.md</code></li>
+<li>It refactors, I review with <code>/project:review</code></li>
+<li>I deploy with <code>/project:deploy-staging</code></li>
+</ol>
+<p>Total time: 10 minutes. Without the custom setup, this would take 30+ minutes of back-and-forth clarifications.</p>
+<h2>Common Mistakes to Avoid</h2>
+<h3>1. Writing a Novel in CLAUDE.md</h3>
+<p>I see projects with 500-line CLAUDE.md files. Claude can't keep that in context. It starts ignoring instructions halfway through.</p>
+<p>Keep it under 200 lines. Move specialized rules to <code>rules/</code> with path scoping.</p>
+<h3>2. Not Using CLAUDE.local.md</h3>
+<p>Don't pollute the team's CLAUDE.md with your personal preferences. Use CLAUDE.local.md for debugging modes, verbose logging, or alternative workflows.</p>
+<h3>3. Creating Commands for Everything</h3>
+<p>Commands are great for repeated tasks. They're overkill for one-off actions.</p>
+<p>Ask yourself: "Will I use this 5+ times?" If no, just type the prompt directly.</p>
+<h3>4. Forgetting to Test Commands</h3>
+<p>Commands that run shell scripts can break your environment if they fail. Always test in a safe branch before committing.</p>
+<h2>Advanced: Memory and Session State</h2>
+<p>Claude Code stores session state in <code>~/.claude/.state/</code>. This includes:</p>
+<ul>
+<li>Conversation history</li>
+<li>Auto-memory (facts Claude learns about your project)</li>
+<li>File context from previous sessions</li>
+</ul>
+<p>You generally don't touch this manually. But if Claude starts "remembering" wrong information, you can clear state:</p>
+<div class="codehilite"><pre><span></span><code>rm -rf ~/.claude/.state/
+</code></pre></div>
+<p>This resets Claude to a fresh session.</p>
+<h2>What to Do Next</h2>
+<ol>
+<li>Open your project's <code>.claude/</code> folder (or create it)</li>
+<li>Create a minimal <code>CLAUDE.md</code> — 20 lines covering your tech stack and build commands</li>
+<li>Add one custom command for your most repeated task</li>
+<li>Use Claude Code for a week</li>
+<li>Iterate: add rules and commands as you notice repeated clarifications</li>
+</ol>
+<p><strong>Starter template:</strong> Copy the example CLAUDE.md from this post, replace the tech stack with yours, and commit it. You'll immediately notice Claude asking fewer questions. </p>
+<p>The <code>.claude</code> folder is how you stop treating Claude like a chatbot and start treating it like a team member who knows your project.</p>
+<p>Once you have this configured, you'll wonder how you ever coded without it.</p>
+<p><strong>Further reading:</strong> <a href="https://blog.dailydoseofds.com/p/anatomy-of-the-claude-folder">Full .claude folder guide</a> | <a href="https://docs.anthropic.com/claude/docs">Official Claude Code docs</a></p>
+<h3>Continue Reading</h3>
+<h4><a href="/posts/2026-03-30-claude-code-runs-git-reset-hard-originmain-against-project-repo-every-10-mins.html">Claude Code runs Git reset –hard origin/main against project repo every 10 mins 5 min → </a> #### <a href="/posts/2026-03-29-ai-overly-affirms-users-asking-for-personal-advice.html">AI overly affirms users asking for personal advice 5 min → </a> #### <a href="/posts/2026-03-30-chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state.html">ChatGPT won't let you type until Cloudflare reads your React state 4 min → </a></h4>
+<h3>⚡ Want More Automation Like This?</h3>
+<p>This post showed you one approach. My <strong>AI <a href="/ai-tools/automation-platforms/">Automation</a> Starter Kit</strong> includes:</p>
+<ul>
+<li><strong>51 copy-paste AI prompts</strong> for email, content, research, and support</li>
+<li><strong>10 <a href="/tutorials/">step-by-step</a> automation blueprints</strong> (invoice, leads, meetings, and more)</li>
+<li><strong>3 real case studies</strong> from solo founders saving $19K-$54K/year</li>
+<li><strong>No-code implementation guides</strong> (Zapier, ChatGPT, Make.com)</li>
+</ul>
+<p>Save 15-30 hours/week with proven systems. No coding required.</p>
+<p><a href="https://worklessbuild.gumroad.com/l/odgowv">Get the Automation Kit — $39</a></p>
+<p>💰 <strong>15-hour guarantee:</strong> Save 15 hours in 30 days or full refund. Keep the kit.</p>
+<hr/>
+<p><em>Published on Work Less, Build - AI automation for solo builders</em><br/>
+<em>Subscribe: https://workless.build/#newsletter</em></p>
+</article>
+<div class="post-footer">
+<p><small><strong>Last updated:</strong> March 29, 2026 • Part of the Work Less, Build series on automation for solopreneurs</small></p>
+</div>
+<!-- Newsletter CTA -->
+<div class="newsletter-cta" id="newsletter">
+<div class="newsletter-card">
+<h3>📬 Get More Like This</h3>
+<p>Weekly automation insights for solopreneurs who value their time.<br/>Zero hustle. 100% systems.</p>
+<form action="https://aiautomationbuilder.beehiiv.com/subscribe" class="newsletter-form" method="post">
+<input name="email" placeholder="your@email.com" required="" type="email"/>
+<button type="submit">Subscribe Free</button>
+</form>
+</div>
+</div>
+<!-- Related Posts -->
+<div class="related-posts" id="related-posts">
+<!-- Related posts loaded dynamically -->
+</div>
+<!-- Footer -->
+<footer>
+<div class="footer-container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="footer-logo">Work Less, Build</div>
+<div class="footer-tagline">Build systems that run themselves</div>
+<p class="footer-description">
+                        Automation insights for solopreneurs who refuse to trade their life for performative productivity.
+                    </p>
+<div class="footer-social">
+<a aria-label="Twitter" href="https://twitter.com/worklessbuild">𝕏</a>
+<a aria-label="GitHub" href="https://github.com/worklessbuild">⚡</a>
+<a aria-label="RSS" href="/rss.xml">📡</a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Content</h4>
+<ul class="footer-links">
+<li><a href="/archive.html">All Articles</a></li>
+<li><a href="/resources.html">Resources</a></li>
+<li><a href="#newsletter">Newsletter</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Company</h4>
+<ul class="footer-links">
+<li><a href="/about.html">About</a></li>
+<li><a href="/about.html#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Legal</h4>
+<ul class="footer-links">
+<li><a href="/privacy.html">Privacy</a></li>
+<li><a href="/terms.html">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Work Less, Build. Built by someone who values their time. | workless.build</p>
+</div>
+</div>
+</footer>
+<script>
+        // Load related posts
+        fetch('/posts/index.json')
+            .then(res => res.json())
+            .then(posts => {
+                const currentUrl = window.location.pathname;
+                const related = posts
+                    .filter(p => p.url !== currentUrl)
+                    .slice(0, 3);
+                
+                if (related.length > 0) {
+                    const container = document.getElementById('related-posts');
+                    const html = `
+                        <div class="related-header">
+                            <h2 class="related-title">Keep Building</h2>
+                            <p class="related-subtitle">More practical automation insights</p>
+                        </div>
+                        <div class="related-grid">
+                            ${related.map(post => `
+                                <div class="related-card">
+                                    <div class="related-card-category">AUTOMATION</div>
+                                    <h4><a href="${post.url}">${post.title}</a></h4>
+                                    <p class="related-card-excerpt">${post.excerpt || 'Practical automation insights for smart builders.'}</p>
+                                    <div class="related-card-meta">
+                                        <span>📅 ${post.date}</span>
+                                        <span>⏱️ ${post.readTime || '5'} min</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    container.innerHTML = html;
+                }
+            })
+            .catch(() => {
+                // Silently fail if no posts available
+            });
+    </script>
+</body>
+</html>

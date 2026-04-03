@@ -1,0 +1,42 @@
+[
+  {
+    "tool1": "Cursor",
+    "tool2": "Windsurf",
+    "path": "ai-automation-blog/blog-new/comparisons/cursor-vs-windsurf.html"
+  },
+  {
+    "tool1": "Make",
+    "tool2": "Zapier",
+    "path": "ai-automation-blog/blog-new/comparisons/make-vs-zapier.html"
+  },
+  {
+    "tool1": "Notion",
+    "tool2": "Obsidian",
+    "path": "ai-automation-blog/blog-new/comparisons/notion-vs-obsidian.html"
+  },
+  {
+    "tool1": "Midjourney",
+    "tool2": "DALL-E",
+    "path": "ai-automation-blog/blog-new/comparisons/midjourney-vs-dalle.html"
+  },
+  {
+    "tool1": "v0",
+    "tool2": "Bolt",
+    "path": "ai-automation-blog/blog-new/comparisons/v0-vs-bolt.html"
+  },
+  {
+    "tool1": "Perplexity",
+    "tool2": "ChatGPT",
+    "path": "ai-automation-blog/blog-new/comparisons/perplexity-vs-chatgpt.html"
+  },
+  {
+    "tool1": "Claude",
+    "tool2": "ChatGPT",
+    "path": "ai-automation-blog/blog-new/comparisons/claude-vs-chatgpt.html"
+  },
+  {
+    "tool1": "Airtable",
+    "tool2": "Notion",
+    "path": "ai-automation-blog/blog-new/comparisons/airtable-vs-notion.html"
+  }
+]

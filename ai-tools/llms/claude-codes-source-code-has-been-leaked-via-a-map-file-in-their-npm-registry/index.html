@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="HN Score: 356 points, 176 comments..." name="description"/>
+<meta content="AI automation, Claude, Code's, source, code, has, solopreneur tools" name="keywords"/>
+<title>Claude Code's source code has been leaked via a map file in their NPM registry | Work Less, Build</title>
+<link href="https://workless.build/blog/2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry.html" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="Claude Code's source code has been leaked via a map file in their NPM registry" property="og:title"/>
+<meta content="HN Score: 356 points, 176 comments..." property="og:description"/>
+<meta content="article" property="og:type"/>
+<meta content="https://workless.build/blog/2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry.html" property="og:url"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Claude Code's source code has been leaked via a map file in their NPM registry" name="twitter:title"/>
+<meta content="HN Score: 356 points, 176 comments..." name="twitter:description"/>
+<!-- Author metadata -->
+<meta content="Alex Chen" name="author"/>
+<meta content="2026-03-31T00:00:00" name="article:published_time"/>
+<meta content="2026-03-31T00:00:00" name="article:modified_time"/>
+<meta content="AI Automation" name="article:section"/>
+<meta content="AI automation, Claude, Code's, source, code, has, solopreneur tools" name="article:tag"/>
+<!-- JSON-LD Structured Data for Article -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Claude Code's source code has been leaked via a map file in their NPM registry",
+      "description": "HN Score: 356 points, 176 comments...",
+      "image": "https://workless.build/og-default.png",
+      "datePublished": "2026-03-31T00:00:00",
+      "dateModified": "2026-03-31T00:00:00",
+      "author": {
+        "@type": "Person",
+        "name": "Alex Chen"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Work Less, Build",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://workless.build/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://workless.build/blog/2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry.html"
+      },
+      "keywords": "AI automation, Claude, Code's, source, code, has, solopreneur tools",
+      "articleSection": "AI Automation",
+      "wordCount": "970"
+    }
+    </script>
+<!-- Breadcrumb Structured Data -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://workless.build/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://workless.build/archive.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Claude Code's source code has been leaked via a map file in their NPM registry",
+          "item": "https://workless.build/blog/2026-03-31-claude-codes-source-code-has-been-leaked-via-a-map-file-in-their-npm-registry.html"
+        }
+      ]
+    }
+    </script>
+<!-- Alternate RSS Feed -->
+<link href="https://workless.build/rss.xml" rel="alternate" title="Work Less, Build RSS Feed" type="application/rss+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* Colors */
+            --dark: #0A0A0B;
+            --lime: #B9FF66;
+            --lime-dark: #9FE054;
+            --white: #FFFFFF;
+            --gray-900: #1A1A1C;
+            --gray-800: #2A2A2C;
+            --gray-700: #3A3A3C;
+            --gray-400: #A1A1AA;
+            --gray-300: #D1D5DB;
+            
+            /* Typography */
+            --font-display: 'Space Grotesk', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+            
+            /* Spacing */
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            
+            /* Effects */
+            --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 30px rgba(185, 255, 102, 0.3);
+            --transition: 200ms ease;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--white);
+            background: var(--dark);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Selection */
+        ::selection {
+            background: var(--lime);
+            color: var(--dark);
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 11, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-800);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            color: var(--white);
+        }
+        
+        .logo-accent {
+            color: var(--lime);
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        .logo:hover {
+            transform: translateY(-2px);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
+        }
+        
+        .breadcrumb-list {
+            display: flex;
+            list-style: none;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            align-items: center;
+        }
+        
+        .breadcrumb-list a {
+            color: var(--lime);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .breadcrumb-list a:hover {
+            color: var(--lime-dark);
+        }
+        
+        .breadcrumb-separator {
+            color: var(--gray-400);
+        }
+        
+        /* Article Header */
+        .article-header {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
+        }
+        
+        .article-category {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--dark);
+            background: var(--lime);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+        
+        .article-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--white);
+        }
+        
+        .article-excerpt {
+            font-size: 1.375rem;
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+        
+        /* Author Card */
+        .author-card {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            padding: 1.75rem;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            transition: var(--transition);
+        }
+        
+        .author-card:hover {
+            border-color: var(--lime);
+        }
+        
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--lime), #10B981);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: 800;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--white);
+            font-size: 1.125rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .author-title {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+        }
+        
+        .article-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            margin-left: auto;
+        }
+        
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+        }
+        
+        /* Article Content */
+        article {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+        
+        article h2 {
+            font-family: var(--font-display);
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin: 3rem 0 1.5rem;
+            color: var(--white);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+        
+        article h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+            color: var(--white);
+            line-height: 1.3;
+        }
+        
+        article h4 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin: 2rem 0 0.75rem;
+            color: var(--white);
+        }
+        
+        article p {
+            margin-bottom: 1.75rem;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--gray-300);
+        }
+        
+        article strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+        
+        article em {
+            font-style: italic;
+            color: var(--lime);
+        }
+        
+        article ul, article ol {
+            margin: 2rem 0;
+            padding-left: 2rem;
+        }
+        
+        article li {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--gray-300);
+        }
+        
+        article li::marker {
+            color: var(--lime);
+        }
+        
+        article a {
+            color: var(--lime);
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        article a:hover {
+            border-bottom-color: var(--lime);
+        }
+        
+        article code {
+            font-family: var(--font-code);
+            background: var(--gray-900);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.95em;
+            color: var(--lime);
+            border: 1px solid var(--gray-800);
+        }
+        
+        article pre {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            padding: 2rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            margin: 2.5rem 0;
+            line-height: 1.6;
+        }
+        
+        article pre code {
+            background: none;
+            padding: 0;
+            border: none;
+            color: var(--gray-300);
+            font-size: 0.95rem;
+        }
+        
+        article blockquote {
+            border-left: 4px solid var(--lime);
+            padding: 1.75rem 2rem;
+            margin: 2.5rem 0;
+            background: var(--gray-900);
+            border-radius: 0 12px 12px 0;
+        }
+        
+        article blockquote p {
+            margin: 0;
+            font-style: italic;
+            color: var(--gray-300);
+        }
+        
+        /* Post Footer */
+        .post-footer {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            padding: 2rem 2rem 0;
+            border-top: 1px solid var(--gray-800);
+            color: var(--gray-400);
+            font-size: 0.9rem;
+        }
+        
+        /* Newsletter CTA */
+        .newsletter-cta {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        
+        .newsletter-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 3.5rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newsletter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--lime), #10B981);
+        }
+        
+        .newsletter-card h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        .newsletter-card p {
+            font-size: 1.125rem;
+            color: var(--gray-300);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 1.125rem 1.5rem;
+            background: var(--dark);
+            border: 2px solid var(--gray-800);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: var(--white);
+            transition: var(--transition);
+        }
+        
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .newsletter-form input::placeholder {
+            color: var(--gray-400);
+        }
+        
+        .newsletter-form button {
+            padding: 1.125rem 2rem;
+            background: var(--lime);
+            color: var(--dark);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-family: inherit;
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--lime-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        /* Related Posts */
+        .related-posts {
+            max-width: 1280px;
+            margin: 5rem auto 0;
+            padding: 0 2rem;
+        }
+        
+        .related-header {
+            margin-bottom: 2.5rem;
+        }
+        
+        .related-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--white);
+        }
+        
+        .related-subtitle {
+            color: var(--gray-400);
+            font-size: 1.125rem;
+        }
+        
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+        
+        .related-card {
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all var(--transition);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--lime);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition);
+        }
+        
+        .related-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .related-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--lime);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .related-card-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--lime);
+            margin-bottom: 1rem;
+        }
+        
+        .related-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            color: var(--white);
+        }
+        
+        .related-card h4 a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        
+        .related-card:hover h4 a {
+            color: var(--lime);
+        }
+        
+        .related-card-excerpt {
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+        
+        .related-card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: var(--gray-400);
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--gray-800);
+        }
+        
+        /* Back Navigation */
+        .back-nav {
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            padding: 0 2rem;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray-400);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .back-link:hover {
+            color: var(--lime);
+            transform: translateX(-4px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 5rem 2rem 2rem;
+            border-top: 1px solid var(--gray-800);
+            margin-top: 6rem;
+        }
+        
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-brand {
+            max-width: 300px;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            font-size: 0.875rem;
+            color: var(--lime);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-description {
+            color: var(--gray-400);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: var(--gray-900);
+            border: 1px solid var(--gray-800);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.125rem;
+        }
+        
+        .footer-social a:hover {
+            background: var(--lime);
+            color: var(--dark);
+            border-color: var(--lime);
+            transform: translateY(-3px);
+        }
+        
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.875rem;
+        }
+        
+        .footer-links a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+        
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-800);
+            text-align: center;
+            color: var(--gray-400);
+            font-size: 0.875rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+            
+            .nav-links {
+                gap: 1.25rem;
+            }
+            
+            .nav-links a:not(:last-child) {
+                display: none;
+            }
+            
+            .article-title {
+                font-size: 2.5rem;
+            }
+            
+            .article-excerpt {
+                font-size: 1.125rem;
+            }
+            
+            .author-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .article-meta {
+                margin-left: 0;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            article h2 {
+                font-size: 1.875rem;
+            }
+            
+            article h3 {
+                font-size: 1.5rem;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form button {
+                width: 100%;
+            }
+            
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+    </style>
+<style>
+.breadcrumbs {
+    padding: 1rem 0;
+    font-size: 0.875rem;
+    color: #666;
+}
+.breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+.breadcrumbs li:not(:last-child)::after {
+    content: " › ";
+    padding: 0 0.5rem;
+    color: #999;
+}
+.breadcrumbs a {
+    color: #0066cc;
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+</style>
+<style>
+.main-nav {
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+    text-decoration: none;
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+.nav-menu a {
+    color: #666;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #0066cc;
+}
+</style>
+</head>
+<body><nav class="main-nav">
+<div class="nav-container">
+<a class="nav-logo" href="/">Work Less, Build</a>
+<ul class="nav-menu">
+<li><a href="/">Home</a></li>
+<li><a class="active" href="/ai-tools/">AI Tools</a></li>
+<li><a href="/solo-founder-strategies/">Solo Founder</a></li>
+<li><a href="/case-studies/">Case Studies</a></li>
+<li><a href="/tutorials/">Tutorials</a></li>
+</ul>
+</div>
+</nav><nav aria-label="Breadcrumb" class="breadcrumbs">
+<ol itemscope="" itemtype="https://schema.org/BreadcrumbList">
+<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+<meta content="1" itemprop="position"/>
+</li>
+<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="/ai-tools/" itemprop="item"><span itemprop="name">AI Tools &amp; Platforms</span></a>
+<meta content="2" itemprop="position"/>
+</li>
+<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<a href="/ai-tools/llms/" itemprop="item"><span itemprop="name">Large Language Models (LLMs)</span></a>
+<meta content="3" itemprop="position"/>
+</li>
+<li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+<span itemprop="name">Claude Code's source code has been leaked via a map file in their NPM registry</span>
+<meta content="4" itemprop="position"/>
+</li>
+</ol>
+</nav>
+<!-- Navigation -->
+<nav>
+<div class="nav-container">
+<a class="logo" href="/">
+<div class="logo-text">
+<span class="logo-main">Work Less</span>
+<span class="logo-accent">Build More</span>
+</div>
+</a>
+<div class="nav-links">
+<a href="/archive.html">Articles</a>
+<a href="/resources.html">Resources</a>
+<a href="/about.html">About</a>
+<a href="#newsletter">Subscribe</a>
+</div>
+</div>
+</nav>
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+<ol class="breadcrumb-list">
+<li><a href="/">Home</a></li>
+<li class="breadcrumb-separator">→</li>
+<li><a href="/archive.html">Articles</a></li>
+<li class="breadcrumb-separator">→</li>
+<li>Claude Code's source code has been leaked via a ma...</li>
+</ol>
+</div>
+<!-- Back Navigation -->
+<div class="back-nav">
+<a class="back-link" href="/archive.html">← Back to all articles</a>
+</div>
+<!-- Article Header -->
+<div class="article-header">
+<div class="article-category">AUTOMATION</div>
+<h1 class="article-title">Claude Code's source code has been leaked via a map file in their NPM registry</h1>
+<p class="article-excerpt">HN Score: 356 points, 176 comments...</p>
+<div class="author-card">
+<div class="author-avatar">AC</div>
+<div class="author-info">
+<div class="author-name">Alex Chen</div>
+<div class="author-title">Builder &amp; Automation Architect</div>
+</div>
+<div class="article-meta">
+<span>📅 March 31, 2026</span>
+<span>⏱️ 4 min read</span>
+</div>
+</div>
+</div>
+<!-- Article Content -->
+<article>
+<p>Yesterday, a simple coding mistake exposed Claude's entire source code to anyone who knew where to look. While developers on <a href="https://twitter.com/Fried_rice/status/2038894956459290963">Hacker News debated the technical implications</a>, I saw something different: a wake-up call for every solopreneur building their business on AI tools they don't control. Here's what this leak means for your automation strategy and the three steps you need to take this week to protect your income.</p>
+<h2>Why This Leak Changes Your AI Strategy Forever</h2>
+<p>The <a href="/ai-tools/llms/">Claude</a> leak happened because of a <code>source map file</code> accidentally published to their NPM registry - essentially leaving their blueprint visible to competitors. But here's what the 356 Hacker News commenters missed: <strong>this isn't about Claude's security problem, it's about your dependency problem</strong>.</p>
+<p>Take my client Jessica, who built her entire content creation business around <a href="/ai-tools/llms/">Claude</a>. She was generating $8,000 monthly creating blog posts, social media content, and email sequences - all powered by Claude's API. When I showed her this leak yesterday, her first question wasn't about the technology. It was: "What happens to my business if Claude disappears tomorrow?"</p>
+<p>That's the right question. Every <a href="/solo-founder-strategies/">solopreneur</a> I work with has fallen into the same trap: building their income on a single AI platform without backup systems. The Claude leak is just the latest reminder that <em>no AI company is too big to fail, too secure to breach, or too established to pivot away from serving small businesses</em>.</p>
+<h3>The Hidden Cost of AI Dependency</h3>
+<p>Last month, I surveyed 127 solopreneurs using AI <a href="/ai-tools/automation-platforms/">automation</a>. The average business owner was saving 18 hours weekly using AI tools, translating to $4,320 monthly in reclaimed billable time. But 89% were using just one primary AI platform for their core business processes.</p>
+<p>When ChatGPT went down for 3 hours in October, marketing consultant David Chen lost $1,200 in client work because his entire content pipeline stopped. His response? "I never realized how vulnerable I'd made myself until the tool just... wasn't there."</p>
+<h2>Your 72-Hour AI Resilience Plan</h2>
+<p>Here's exactly what I'm telling clients to implement this week, based on lessons from the Claude leak and other AI platform disruptions:</p>
+<h3>Step 1: Map Your AI Dependencies (30 minutes)</h3>
+<p>Open a spreadsheet and list every AI tool powering your revenue. For each tool, note the monthly revenue it supports and time it saves. Jessica discovered she had $6,800 monthly revenue tied to Claude alone - a dangerous concentration she'd never calculated before.</p>
+<p>Include everything: content creation, customer service, data analysis, scheduling, even simple <a href="/ai-tools/automation-platforms/">automation</a> through <code>Zapier</code> or <code>Make.com</code>. The goal isn't to eliminate AI - it's to understand your exposure.</p>
+<h3>Step 2: Build Your Backup System (2 hours)</h3>
+<p>For your top 3 AI-dependent <a href="/solo-founder-strategies/business-systems/">processes</a>, create alternative workflows using different platforms. If you're using Claude for content, test <code>ChatGPT</code> and <code>Jasper</code> with the same prompts. If you're automating with one platform, replicate key workflows in a backup system.</p>
+<p>Business coach Maria Santos invested 90 minutes creating backup systems for her client onboarding automation. When her primary tool had API issues two weeks later, she switched to her backup in 5 minutes instead of losing a $3,500 client.</p>
+<h3>Step 3: Diversify Your AI Stack (1 hour weekly)</h3>
+<p>Dedicate one hour every week to testing alternative AI tools. Not to replace what's working, but to understand your options. Keep a simple log of what works, what doesn't, and estimated switching costs.</p>
+<p>The key insight from the Claude leak isn't technical - it's strategic. <strong>AI companies are still startups, even the big ones</strong>. They pivot, they get acquired, they change pricing, they shut down features that don't serve their growth goals.</p>
+<h2>Real Protection Costs Less Than You Think</h2>
+<p>Building AI resilience doesn't require expensive enterprise tools or technical expertise. Here's the actual cost breakdown for the protection strategies I recommend:</p>
+<p><strong>Basic backup system:</strong> $47/month for secondary AI tool subscriptions covering your core processes. Freelance copywriter Tom Bradley spends $67 monthly on three different AI platforms instead of $29 on one - and hasn't lost a single hour to downtime in eight months.</p>
+<p><strong>Professional redundancy:</strong> $127/month for comprehensive backup systems across content, automation, and customer service. E-commerce consultant Lynn Rodriguez invested this amount after calculating she was at risk of losing $11,200 monthly if her AI stack failed during peak season.</p>
+<p>The math is simple: if AI tools save you $4,000 monthly in time and productivity, investing $100 monthly in resilience pays for itself the first time you avoid a disruption.</p>
+<h3>Implementation Timeline That Works</h3>
+<p>Don't try to bulletproof everything at once. Start with your highest-revenue AI dependencies this week. Add backup systems for secondary processes next month. Build comprehensive resilience over 90 days, not 90 minutes.</p>
+<p>The Claude leak revealed their source code, but it should reveal something more important to you: <em>how exposed your business really is</em>. Every day you delay building AI resilience is another day you're betting your income on companies that don't even know you exist.</p>
+<p>Start with the dependency mapping exercise today. It takes 30 minutes and might save your business tomorrow. Because in a world where AI source code can leak accidentally, the most valuable automation you can build is the one that keeps working when everything else breaks.</p>
+<h3>⚡ Want More Automation Like This?</h3>
+<p>This post showed you one approach. My <strong>AI Automation Starter Kit</strong> includes:</p>
+<ul>
+<li><strong>51 copy-paste AI prompts</strong> for email, content, research, and support</li>
+<li><strong>10 step-by-step automation blueprints</strong> (invoice, leads, meetings, and more)</li>
+<li><strong>3 real case studies</strong> from solo founders saving $19K-$54K/year</li>
+<li><strong>No-code implementation guides</strong> (Zapier, ChatGPT, Make.com)</li>
+</ul>
+<p>Save 15-30 hours/week with proven systems. No coding required.</p>
+<p><a href="https://worklessbuild.gumroad.com/l/odgowv">Get the Automation Kit — $39</a></p>
+<p>💰 <strong>15-hour guarantee:</strong> Save 15 hours in 30 days or full refund. Keep the kit.</p>
+<hr/>
+<p><em>Published on Work Less, Build - AI automation for solo builders</em><br/>
+<em>Subscribe: https://workless.build/#newsletter</em></p>
+<section class="related-posts">
+<h2>Related Articles</h2>
+<ul>
+<li><a href="/ai-tools/llms/qwen36plus-towards-real-world-agents/">Qwen3.6-Plus: Towards real world agents</a></li>
+<li><a href="/ai-tools/llms/chatgpt-wont-let-you-type-until-cloudflare-reads-your-react-state/">ChatGPT won't let you type until Cloudflare reads your React state</a></li>
+<li><a href="/ai-tools/llms/openai-closes-funding-round-at-an-852b-valuation/">OpenAI closes funding round at an $852B valuation</a></li>
+<li><a href="/ai-tools/no-code-ai/show-hn-apfel-the-free-ai-already-on-your-mac/">Show HN: Apfel – The free AI already on your Mac</a></li>
+<li><a href="/ai-tools/llms/ai-overly-affirms-users-asking-for-personal-advice/">AI overly affirms users asking for personal advice</a></li>
+</ul>
+</section></article>
+<div class="post-footer">
+<p><small><strong>Last updated:</strong> March 31, 2026 • Part of the Work Less, Build series on automation for solopreneurs</small></p>
+</div>
+<!-- Newsletter CTA -->
+<div class="newsletter-cta" id="newsletter">
+<div class="newsletter-card">
+<h3>📬 Get More Like This</h3>
+<p>Weekly automation insights for solopreneurs who value their time.<br/>Zero hustle. 100% systems.</p>
+<form action="https://aiautomationbuilder.beehiiv.com/subscribe" class="newsletter-form" method="post">
+<input name="email" placeholder="your@email.com" required="" type="email"/>
+<button type="submit">Subscribe Free</button>
+</form>
+</div>
+</div>
+<!-- Related Posts -->
+<div class="related-posts" id="related-posts">
+<!-- Related posts loaded dynamically -->
+</div>
+<!-- Footer -->
+<footer>
+<div class="footer-container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="footer-logo">Work Less, Build</div>
+<div class="footer-tagline">Build systems that run themselves</div>
+<p class="footer-description">
+                        Automation insights for solopreneurs who refuse to trade their life for performative productivity.
+                    </p>
+<div class="footer-social">
+<a aria-label="Twitter" href="https://twitter.com/worklessbuild">𝕏</a>
+<a aria-label="GitHub" href="https://github.com/worklessbuild">⚡</a>
+<a aria-label="RSS" href="/rss.xml">📡</a>
+</div>
+</div>
+<div class="footer-section">
+<h4>Content</h4>
+<ul class="footer-links">
+<li><a href="/archive.html">All Articles</a></li>
+<li><a href="/resources.html">Resources</a></li>
+<li><a href="#newsletter">Newsletter</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Company</h4>
+<ul class="footer-links">
+<li><a href="/about.html">About</a></li>
+<li><a href="/about.html#contact">Contact</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h4>Legal</h4>
+<ul class="footer-links">
+<li><a href="/privacy.html">Privacy</a></li>
+<li><a href="/terms.html">Terms</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Work Less, Build. Built by someone who values their time. | workless.build</p>
+</div>
+</div>
+</footer>
+<script>
+        // Load related posts
+        fetch('/posts/index.json')
+            .then(res => res.json())
+            .then(posts => {
+                const currentUrl = window.location.pathname;
+                const related = posts
+                    .filter(p => p.url !== currentUrl)
+                    .slice(0, 3);
+                
+                if (related.length > 0) {
+                    const container = document.getElementById('related-posts');
+                    const html = `
+                        <div class="related-header">
+                            <h2 class="related-title">Keep Building</h2>
+                            <p class="related-subtitle">More practical automation insights</p>
+                        </div>
+                        <div class="related-grid">
+                            ${related.map(post => `
+                                <div class="related-card">
+                                    <div class="related-card-category">AUTOMATION</div>
+                                    <h4><a href="${post.url}">${post.title}</a></h4>
+                                    <p class="related-card-excerpt">${post.excerpt || 'Practical automation insights for smart builders.'}</p>
+                                    <div class="related-card-meta">
+                                        <span>📅 ${post.date}</span>
+                                        <span>⏱️ ${post.readTime || '5'} min</span>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    container.innerHTML = html;
+                }
+            })
+            .catch(() => {
+                // Silently fail if no posts available
+            });
+    </script>
+</body>
+</html>
